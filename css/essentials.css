@@ -71,6 +71,7 @@ header .menu button {
     align-items: center;
     width: 100%;
     height: 50px;
+    z-index: 9999 !important;
 
     color: white;
     background-color: transparent;
