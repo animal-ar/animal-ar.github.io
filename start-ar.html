@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/essentials.css">
-    <link rel="stylesheet" href="./mindar-image-three.prod.js">
-    <link rel="stylesheet" href="./main.js">
+
+    <!-- A‑Frame & MindAR.js Library -->
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
 </head>
 <body>
     <header>
@@ -18,6 +20,40 @@
             <a href="index.html"><button>Kembali</button></a>
         </div>
     </header>
+
+    <a-scene 
+        mindar-image="imageTargetSrc: ./glb/targets.mind; maxTrack: 2"
+        color-space="sRGB"
+        renderer="colorManagement: true, physicallyCorrectLights"
+        vr-mode-ui="enabled: false"
+        device-orientation-permission-ui="enabled: false">
+
+        <a-assets>
+            <!-- Models -->
+            <a-asset-item id="rusa-model" src="./glb/rusa-ekor-putih.glb"></a-asset-item>
+            <a-asset-item id="ikan-model" src="./glb/ikan-mas-ryukin.glb"></a-asset-item>
+        </a-assets>
+
+        <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
+
+        <a-entity mindar-image-target="targetIndex: 0">
+            <a-gltf-model 
+                src="#rusa-model"
+                scale="0.3 0.3 0.3"
+                rotation="0 180 0"
+                position="0 0 0.1">
+            </a-gltf-model>
+        </a-entity>
+
+        <a-entity mindar-image-target="targetIndex: 1">
+            <a-gltf-model 
+                src="#ikan-model"
+                scale="0.3 0.3 0.3"
+                rotation="0 90 0"
+                position="0 0 0.1">
+            </a-gltf-model>
+        </a-entity>
+    </a-scene>
 </body>
 
 <script>

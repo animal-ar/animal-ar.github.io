@@ -8,12 +8,14 @@ body {
 button { font-family: 'Nunito'; }
 
 header {
+    position: absolute;
     display: flex;
     justify-content: space-between;
     width: 100%;
     height: 140px;
     padding: 20px;
     box-sizing: border-box;
+    z-index: 10 !important;
 
     background: url(/assets/header-img.png);
     background-size: cover;
@@ -71,7 +73,7 @@ header .menu button {
     align-items: center;
     width: 100%;
     height: 50px;
-    z-index: 9999 !important;
+    z-index: 11 !important;
 
     color: white;
     background-color: transparent;
