@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -34,7 +34,7 @@
         </div>
     </header>
 
-    <p id="idleState">Dekatkan kartu edukatif setidaknya 4-7cm dari kamera dan dapatkan pencahayaan maksimal</p>
+    <p id="idleState">Dekatkan kartu setidaknya 4-7cm dari kamera dan dapatkan pencahayaan maksimal</p>
     <div id="boxInfo">
         <div class="upper-section">
             <div class="header-section">
@@ -68,6 +68,7 @@
             <a-asset-item id="ikan-mas-ryukin" src="./glb/ikan-mas-ryukin.glb"></a-asset-item>
             <a-asset-item id="ular-tanah" src="./glb/ular-tanah.glb"></a-asset-item>
             <a-asset-item id="burung-kicuit-benuang" src="./glb/burung-kicuit-benuang.glb"></a-asset-item>
+            <a-asset-item id="penyu" src="./glb/penyu.glb"></a-asset-item>
         </a-assets>
 
         <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
@@ -77,7 +78,8 @@
                 src="#rusa-ekor-putih"
                 scale="0.2 0.2 0.2"
                 rotation="0 -90 -90"
-                position="0 -0.2 0">
+                position="0 -0.2 0"
+                animation="easing: easeInOutQuad;">
             </a-gltf-model>
         </a-entity>
 
@@ -86,20 +88,32 @@
                 src="#ikan-mas-ryukin"
                 scale="0.15 0.15 0.15"
                 rotation="0 -90 -90"
-                position="0 -0.2 0">
+                position="0 -0.2 0"
+                animation="easing: easeInOutQuad;">
+            </a-gltf-model>
+        </a-entity>
+        
+        <a-entity id="target-penyu" mindar-image-target="targetIndex: 2">
+            <a-gltf-model 
+                src="#penyu"
+                scale="0.15 0.15 0.15"
+                rotation="0 -90 -90"
+                position="0 -0.2 0.5"
+                animation="easing: easeInOutQuad;">
             </a-gltf-model>
         </a-entity>
 
-        <a-entity mindar-image-target="targetIndex: 4">
+        <a-entity id="target-ular-tanah" mindar-image-target="targetIndex: 4">
             <a-gltf-model 
                 src="#ular-tanah"
                 scale="0.15 0.15 0.15"
                 rotation="0 -90 -90"
-                position="0 -0.2 0">
+                position="0 -0.2 0.3"
+                animation="easing: easeInOutQuad;">
             </a-gltf-model>
         </a-entity>
 
-        <a-entity mindar-image-target="targetIndex: 6">
+        <a-entity id="target-burung-kicuit-benuang" mindar-image-target="targetIndex: 6">
             <a-gltf-model 
                 src="#burung-kicuit-benuang"
                 scale="0.15 0.15 0.15"

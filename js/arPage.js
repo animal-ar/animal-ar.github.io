@@ -28,6 +28,9 @@ let isUiHidden = false;
 
 const targetRusa = document.querySelector('#target-rusa-ekor-putih');
 const targetIkan = document.querySelector('#target-ikan-mas-ryukin');
+const targetPenyu = document.querySelector('#target-penyu');
+const targetUlarTanah = document.querySelector('#target-ular-tanah');
+const targetBurungKicuitBenuang = document.querySelector('#target-burung-kicuit-benuang');
 
 function hideAllUI(state) {
     if (state === true) {
@@ -136,4 +139,50 @@ targetIkan.addEventListener('targetFound', function() {
     <img src="./assets/animal-images/Ryukin.jpg" alt="">`;
 });
 
+targetPenyu.addEventListener('targetFound', function() {
+    hideIdleState();
+    showBoxInfo("Penyu", 
+        `Penyu Hijau (Chelonia mydas) adalah salah satu jenis reptil laut yang hidup di samudra tropis dan sub-tropis di seluruh dunia. 
+        Ia dinamakan “penyu hijau” karena warna lemak tubuhnya yang berwarna kehijauan akibat banyak mengonsumsi lamun dan alga. 
+        Ia pemakan tumbuhan (herbivora) saat dewasa. Memiliki sirip depan yang kuat seperti dayung sehingga ia mampu bermigrasi 
+        menyeberangi lautan hingga ribuan kilometer.`,
+        false
+    );
+    imageCaraousel.innerHTML = `<img src="./assets/database image ar/penyu.png" alt="">
+    <img src="./assets/animal-images/penyu-hijau.jpg" alt="">`;
+});
+
+targetUlarTanah.addEventListener('targetFound', function() {
+    hideIdleState();
+    showBoxInfo("Ular Tanah", 
+        `Ular Tanah (Calloselasma rhodostoma) adalah salah satu jenis ular berbisa dari keluarga viper yang banyak ditemukan di 
+        kawasan Asia Tenggara. Ia memiliki bentuk sedikit mendongak ke atas dan kepalanya yang berbentuk segitiga tajam. 
+        Ia merupakan pemakan hewan kecil (karnivora). Memiliki corak warna cokelat dengan pola segitiga gelap yang sangat mirip 
+        dengan tumpukan daun kering.`,
+        true,
+        "./assets/sound/ular-tanah.mp3"
+    );
+    imageCaraousel.innerHTML = `<img src="./assets/database image ar/ular_tanah.png" alt="">
+    <img src="./assets/animal-images/Callos_rhodos_120610-0642_krw.jpg" alt="">`;
+});
+
+
+targetBurungKicuitBenuang.addEventListener('targetFound', function() {
+    hideIdleState();
+    showBoxInfo("Burung Kicuit Benuang", 
+        `Kicuit Benuang (Motacilla tschutschensis) adalah burung pengicau kecil yang berkembang biak di wilayah Siberia dan Alaska, 
+        lalu bermigrasi ke Indonesia saat musim dingin. Ia dinamakan “Kicuit” karena suara yang nyaring dan “Benuang” yang merujuk nama
+        lokalnya. Ia pemakan serangga (insektivora). Memiliki tubuh ramping dengan warna kuning cerah di bagian perut.`,
+        true,
+        "./assets/sound/burung-kicuit-benuang.mp3"
+    );
+    imageCaraousel.innerHTML = `<img src="./assets/database image ar/burung_kicuit_benuang.png" alt="">
+    <img src="./assets/animal-images/Motacilla-flava-by-Vladimir-Bryukhov-Source-iNaturalist.jpeg" alt="">`;
+});
+
+
 targetRusa.addEventListener('targetLost', isFullState);
+targetIkan.addEventListener('targetLost', isFullState);
+targetPenyu.addEventListener('targetLost', isFullState);
+targetUlarTanah.addEventListener('targetLost', isFullState);
+targetBurungKicuitBenuang.addEventListener('targetLost', isFullState);
