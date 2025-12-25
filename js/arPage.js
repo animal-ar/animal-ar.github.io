@@ -29,7 +29,9 @@ let isUiHidden = false;
 const targetRusa = document.querySelector('#target-rusa-ekor-putih');
 const targetIkan = document.querySelector('#target-ikan-mas-ryukin');
 const targetPenyu = document.querySelector('#target-penyu');
+const targetMegalodon = document.querySelector('#target-megalodon');
 const targetUlarTanah = document.querySelector('#target-ular-tanah');
+const targetKatakBanjo = document.querySelector('#target-katak-banjo');
 const targetBurungKicuitBenuang = document.querySelector('#target-burung-kicuit-benuang');
 
 function hideAllUI(state) {
@@ -80,7 +82,7 @@ function showBoxInfo(header, paragraph, isSound, sound) {
 }
 
 animalSoundBtn.addEventListener("click", function(e) {
-    e.stopPropagation();   // ⛔ stop naik ke boxInfo
+    e.stopPropagation();   // stop naik ke boxInfo
     audioAnimalPlayer.load();
     audioAnimalPlayer.play();
 });
@@ -152,6 +154,19 @@ targetPenyu.addEventListener('targetFound', function() {
     <img src="./assets/animal-images/penyu-hijau.jpg" alt="">`;
 });
 
+targetMegalodon.addEventListener('targetFound', function() {
+    hideIdleState();
+    showBoxInfo("Megalodon", 
+        `Megalodon (Otodus megalodon) adalah jenis hiu raksasa purba yang pernah menguasai lautan dunia jutaan tahun yang lalu. 
+        Ia dinamakan “Megalodon” yang berarti “gigi besar”. Ia merupakan pemakan daging (karnivora) tingkat atas yang memangsa 
+        paus dan mamalia laut besar lainnya. Memiliki ukuran tubuh yang diperkirakan mencapai panjang 15 hingga 18 meter, 
+        menjadikannya predator air paling perkasa dalam sejarah.`,
+        false
+    );
+    imageCaraousel.innerHTML = `<img src="./assets/database image ar/megalodon.png" alt="">
+    <img src="./assets/animal-images/JS4vZx8pjBaGbxYvmVUFv5.jpg" alt="">`;
+});
+
 targetUlarTanah.addEventListener('targetFound', function() {
     hideIdleState();
     showBoxInfo("Ular Tanah", 
@@ -166,6 +181,19 @@ targetUlarTanah.addEventListener('targetFound', function() {
     <img src="./assets/animal-images/Callos_rhodos_120610-0642_krw.jpg" alt="">`;
 });
 
+targetKatakBanjo.addEventListener('targetFound', function() {
+    hideIdleState();
+    showBoxInfo("Katak Banjo (Pobblebonk)", 
+        `Katak Banjo (Limnodynastes dumerilii) adalah salah satu jenis amfibi penggali yang berasal dari benua Australia. 
+        Ia dinamakan “Banjo” karena suara panggilan pejantannya yang terdengar unik seperti petikan senar alat musik banjo. 
+        Ia pemakan serangga dan hewan kecil (insektivora) yang aktif mencari mangsa di malam hari setelah hujan lebat. 
+        Memiliki tubuh yang gempal dan kaki belakang yang kuat untuk menggali tanah.`,
+        true,
+        "./assets/sound/katak-banjo.mp3"
+    );
+    imageCaraousel.innerHTML = `<img src="./assets/database image ar/katak_banjo.png" alt="">
+    <img src="./assets/animal-images/Limnodynastes_dorsalis_Western_banjo_frog_2_Stirling_Range_NP_II-2010.jpg" alt="">`;
+});
 
 targetBurungKicuitBenuang.addEventListener('targetFound', function() {
     hideIdleState();
@@ -181,8 +209,11 @@ targetBurungKicuitBenuang.addEventListener('targetFound', function() {
 });
 
 
+
 targetRusa.addEventListener('targetLost', isFullState);
 targetIkan.addEventListener('targetLost', isFullState);
 targetPenyu.addEventListener('targetLost', isFullState);
+targetMegalodon.addEventListener('targetLost', isFullState);
 targetUlarTanah.addEventListener('targetLost', isFullState);
+targetKatakBanjo.addEventListener('targetLost', isFullState);
 targetBurungKicuitBenuang.addEventListener('targetLost', isFullState);

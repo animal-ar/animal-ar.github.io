@@ -6,7 +6,16 @@
     <title>Animal AR - Gallery</title>
     <link rel="stylesheet" href="css/essentials.css">
     <link rel="stylesheet" href="css/main-page.css">
+    <link rel="stylesheet" href="css/card-gallery.css">
+
     <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
+    <link rel="apple-touch-icon" href="icons/icon-192x192.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Animal AR">
+    <meta name="theme-color" content="#048470">
 
     <style>
         body {
@@ -24,13 +33,35 @@
     </style>
 </head>
 <body>
+    <div id="showCard">
+        <div class="card-elm">
+            <img id="cardShowedNow" alt="">
+            <img class="bg" src="./assets/card-design/bg.png" alt="">
+        </div>
+        <button id="closeCardShowBtn">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
+        </button>
+    </div>
+
     <div class="box-white">
-        <h1>Gallery</h1>
+        <h1 style="padding-bottom: 18px;">Gallery</h1>
+        <div class="card-grid">
+            <img id="kartuRusa" src="./assets/card-design/kartu_rusa-ekor-putih.png" alt="">
+            <img id="kartuIkanMasRyukin" src="./assets/card-design/kartu_ikan-mas-ryukin.png" alt="">
+            <img id="kartuPenyu" src="./assets/card-design/kartu_penyu.png" alt="">
+            <img id="kartuUlarTanah" src="./assets/card-design/kartu_ular-tanah.png" alt="">
+            <img id="kartuMegalodon" src="./assets/card-design/kartu_megalodon.png" alt="">
+            <img id="kartuKatakBanjo" src="./assets/card-design/kartu_katak-banjo.png" alt="">
+            <img id="kartuBurungKicuitBenuang" src="./assets/card-design/kartu_burung-kicuit-benuang.png" alt="">
+            <img id="kartuGagak" src="./assets/card-design/kartu_gagak.png" alt="">
+        </div>
+        <a href="./assets/kartu-fisik-animal-ar.pdf" download="kartu-fisik-animal-ar.pdf">Unduh PDF Kartu Edukatif Fisik</a>
     </div>
 
     <div class="main-button">
         <a href="index.html"><button>Kembali</button></a>
     </div>    
 </body>
+<script src="./js/galleryPage.js"></script>
 <script src="./js/swPage.js"></script>
 </html>
