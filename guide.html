@@ -3,12 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Animal AR - Main Page</title>
+    <title>Animal AR - Guide</title>
     <link rel="stylesheet" href="css/essentials.css">
     <link rel="stylesheet" href="css/main-page.css">
-    
+
     <link rel="manifest" href="manifest.json">
-    <link rel="icon" type="image/png" sizes="512x512" href="icons/favicon-512x512.png">
     <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
     <link rel="apple-touch-icon" href="icons/icon-192x192.png">
@@ -18,30 +17,29 @@
     <meta name="theme-color" content="#048470">
 
     <style>
-        html, body {
-            margin: 0;
-        }
-
         body {
-            min-height: 100vh;   /* fallback */
+            justify-content: flex-start;
+            padding-top: 58px;
+            gap: 58px;
+            padding-bottom: 58px;
+            height: auto;
         }
 
-        @media (max-width: 768px) {
-            body {
-                min-height: 100dvh;
-            }
+        hr {
+            border: none; 
+            border-top: 1px solid black;
         }
     </style>
 </head>
 <body>
-    <img class="main-logo" src="assets/animar-ar-white-main-screen.png" alt="">
+    <div class="box-white">
+        <h1 style="padding-bottom: 18px;">Guide </h1>
+        <iframe width="100%" height=500" src="https://www.youtube.com/embed/wXtyQkfPEG8?si=H7ocLFsRvhhoYZhb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
 
     <div class="main-button">
-        <a href="start-ar.html"><button>Mulai AR</button></a>
-        <a href="guide.html"><button>Guide</button></a>
-        <a href="gallery.html"><button>Card Gallery</button></a>
-        <a href="about.html"><button>About</button></a>
-    </div>
+        <a href="index.html"><button>Kembali</button></a>
+    </div>    
 </body>
 <script src="./js/swPage.js"></script>
 </html>
